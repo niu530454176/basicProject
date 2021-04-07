@@ -1,0 +1,10 @@
+/*body {
+  .translationColor('这里需要传值的传值没有则不传')
+}*/
+.webkitScrollBarHidden {
+  -ms-overflow-style: none;
+}
+.webkitScrollBarHidden::-webkit-scrollbar {
+  display: none;
+}
+/*# sourceMappingURL=variable.css.map */

@@ -1,0 +1,188 @@
+//在css中  例如
+/*body {
+  .translationColor('这里需要传值的传值没有则不传')
+}*/
+
+//过度效果
+.translationColor () {
+  -webkit-transition: all .4s cubic-bezier(.175, .885, .32, 1);
+  -o-transition: all .4s cubic-bezier(.175, .885, .32, 1);
+  transition: all .4s cubic-bezier(.175, .885, .32, 1)
+}
+
+//隐藏滚动条
+.webkitScrollBarHidden {
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {display:none}
+}
+//修改滚动条样式
+.webkitScrollBar () {
+  &::-webkit-scrollbar {
+    width: 4px; /*滚动条宽度*/
+    height: 0; /*滚动条高度*/
+  }
+
+  &::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+    border-radius: 6px;
+    // -webkit-box-shadow: inset 0 0 5px rgba(120, 120, 120, 0.2);
+    background: #b6b2b2;
+  }
+
+  &::-webkit-scrollbar-track { /*滚动条里面轨道*/
+    // -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    background: #fff;
+  }
+  ///*三角箭头的颜色*/
+  //scrollbar-arrow-color: rgba(255,255,255,0);
+  ///*滚动条滑块按钮的颜色*/
+  //scrollbar-face-color: rgba(255,255,255,0);
+  ///*滚动条整体颜色*/
+  //scrollbar-highlight-color: rgba(255,255,255,0);
+  ///*滚动条阴影*/
+  //scrollbar-shadow-color: rgba(255,255,255,0);
+  ///*滚动条轨道颜色*/
+  //scrollbar-track-color: rgba(255,255,255,0);
+}
+
+//修改input placeHolder颜色样式
+.webkitPlaceHolderColor (@color) {
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: @color;
+    text-shadow: none;
+    -webkit-text-fill-color: initial;
+  }
+
+  &:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: @color;
+    text-shadow: none;
+    -webkit-text-fill-color: initial;
+  }
+
+  &::-webkit-input-placeholder {
+    color: @color;
+    text-shadow: none;
+    -webkit-text-fill-color: initial;
+  }
+}
+
+//修改input placeHolder字体大小样式
+.webkitPlaceHolderFontSize (@fontSize) {
+  &::-webkit-input-placeholder { /* WebKit browsers */
+    font-size: @fontSize;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-size: @fontSize;
+  }
+
+  &:-ms-input-placeholder { /* Internet Explorer 10+ */
+    font-size: @fontSize;
+  }
+}
+
+//限制文本行数   超出几行显示...
+.clamp (@num) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @num;
+  overflow: hidden;
+}
+
+// 显示宽度百分比减去多余宽度
+.calcWidth (@width) {
+  width: -webkit-calc(100% - @width);
+  width: -moz-calc(100% - @width);
+  width: calc(100% - @width);
+}
+
+// 显示高度百分比减去多余高度
+.calcHeight (@height) {
+  height: -webkit-calc(100% - @height);
+  height: -moz-calc(100% - @height);
+  height: calc(100% - @height);
+}
+
+//主体色 导航、按钮、icon、背景、提示
+@mainBodyTip1Color: #4691db;
+//点缀色 提示、重点、等级最高
+@mainBodyTip2Color: #d83f3f;
+//点缀色 提示、等级仅次红色
+@mainBodyTip3Color: #f7991e;
+//点缀色 提示、等级仅次橙色
+@mainBodyTip4Color: #f4e41d;
+//点缀色 提示、最安全颜色
+@mainBodyTip4Color: #3cbc70;
+//描边色 分栏线、表格描边、表单描边#898989
+@mainBodyTip4Color: #898989;
+
+//文字颜色
+//标题色 模块标题颜色
+@fontColor1: #595757;
+//正文色 正文、表格内容字体颜色
+@fontColor2: #898989;
+//提示色 不重要的标注、次要信息字体颜色
+@fontColor3: #b5b5b6;
+
+//字体大小
+//用于标题,重要信息
+@fontSize1: 15px;
+//用于小标题
+@fontSize2: 14px;
+//用于正文、内容
+@fontSize3: 13px;
+//用于部分内容,不重要信息
+@fontSize4: 12px;
+
+@bodyBackGround: #f6f6f6;
+
+//正文按钮最大尺寸130*22
+.btnSize1 () {
+  width: 100px;
+  height: 22px;
+  line-height: 22px;
+}
+//导航栏按钮100*22
+.btnSize2 () {
+  width: 100px;
+  height: 22px;
+  line-height: 22px;
+}
+//正文按钮最小尺寸60*22
+.btnSize3 () {
+  width: 60px;
+  height: 22px;
+  line-height: 22px;
+}
+
+
+//右侧小按钮
+//按钮最大尺寸90*22
+.rightBtnSize () {
+  width: 90px;
+  height: 22px;
+  line-height: 22px;
+}
+//按钮最小尺寸60*22
+.rightBtnSize () {
+  width: 60px;
+  height: 22px;
+  line-height: 22px;
+}
+
+//删除按钮背景颜色
+@btnBackground1: #d74c50;
+
+//流程已完成按钮底色#4a926a
+@btnBackground2: #4a926a;
+
+//至灰按钮#b4b4b6
+@btnBackground3: #b4b4b6;
+//LOGO尺寸
+//首页ICON规格,25*25
+//提示ICON,18px*20px
+//搜索ICON,14px*14px
+//返回,首页折叠ICON,13px*8px
+//x LOGO尺寸 w96px h25px
+
+@haiJiaBlueColor: #20a3e1;
+@haiJIAYellowColor: #ff8c00;
